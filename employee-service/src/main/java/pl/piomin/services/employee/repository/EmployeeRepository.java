@@ -21,7 +21,7 @@ public class EmployeeRepository {
 		return employees.stream()
 				.filter(a -> a.getId().equals(id))
 				.findFirst()
-				.orElseThrow();
+				.orElseThrow(null);
 	}
 	
 	public List<Employee> findAll() {
@@ -31,13 +31,13 @@ public class EmployeeRepository {
 	public List<Employee> findByDepartment(Long departmentId) {
 		return employees.stream()
 				.filter(a -> a.getDepartmentId().equals(departmentId))
-				.toList();
+				.collect(Collectors.toList());
 	}
 	
 	public List<Employee> findByOrganization(Long organizationId) {
 		return employees.stream()
 				.filter(a -> a.getOrganizationId().equals(organizationId))
-				.toList();
+				.collect(Collectors.toList());
 	}
 	
 }
