@@ -1,4 +1,4 @@
-FROM openjdk:11-jre-alpine
+FROM openjdk:11
 ENV APP_FILE config-service-1.1-SNAPSHOT.jar
 ENV APP_HOME /app
 EXPOSE 8088
